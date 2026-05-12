@@ -1,0 +1,306 @@
+Resumen inicial proyecto 
+1. Introducción 
+El proyecto consiste en el desarrollo de una aplicación web destinada a mejorar y automatizar la gestión 
+del préstamo de libros en el Instituto IES Arcipreste de Hita. Surge de la necesidad de sustituir los procesos 
+manuales o basados en hojas de cálculo (Excel), que resultan poco eficientes y propensos a errores, por 
+una solución centralizada, segura y accesible. 
+La aplicación permitirá registrar y controlar los préstamos de libros concedidos a los alumnos becados, 
+facilitando las tareas de administración, seguimiento y devolución de ejemplares, además de optimizar los 
+tiempos de gestión y reducir costes operativos. 
+2. Objetivos del Proyecto 
+• Centralizar la gestión de libros y alumnos en una base de datos unificada. 
+• Simplificar los procesos administrativos relacionados con la cesión, devolución y control del estado 
+de los libros. 
+• Ofrecer una interfaz web intuitiva accesible desde cualquier dispositivo con conexión a Internet. 
+• Permitir la generación de listados y contratos de préstamo de forma automática. 
+• Garantizar la seguridad y preservación de los datos, mediante copias de seguridad y control de 
+accesos. 
+3. Funcionalidad Esperada 
+La aplicación se estructura en tres grandes áreas funcionales: 
+A. Carga de datos 
+• Importación de materias, cursos, libros y alumnado al inicio del curso escolar. 
+• Posibilidad de limpiar y reiniciar la base de datos. 
+• Gestión de errores durante la carga de información. 
+B. Gestión de alumnos 
+• Alta, modificación y baja de registros de alumnos. 
+• Visualización del historial de préstamos de cada alumno. 
+• Control de tramos de beca y asignaciones específicas. 
+C. Gestión de préstamos 
+• Asignación de libros a los alumnos y control de devoluciones. 
+• Registro del estado de los ejemplares. 
+• Generación e impresión de contratos de cesión. 
+• Firma electrónica o validación administrativa. 
+Oscar Ongil Villar   
+10/10/2025 
+D. Listados y consultas 
+• Búsquedas avanzadas con filtros por curso, materia o estado. 
+• Listados de alumnos, libros y préstamos. 
+• Exportación de datos a formatos CSV o SQL para el curso siguiente. 
+E. Administración y seguridad 
+• Autenticación mediante roles (Administrador y Alumno). 
+• Copia de seguridad y restauración de datos. 
+• Logs de actividad y preservación de información sensible según la normativa de protección de 
+datos. 
+4. Tecnologías Utilizadas 
+Lenguajes de Programación 
+• PHP 8.2: lenguaje principal para el desarrollo del backend. 
+• HTML5 y CSS3: estructura y diseño de las páginas web. 
+• Bootstrap 5.3: framework CSS para lograr un diseño adaptable y profesional. 
+Gestión de Bases de Datos 
+• MySQL 8.2: motor de base de datos relacional utilizado para el almacenamiento de la información 
+(libros, alumnos, préstamos). 
+• SQL estructurado para creación, consultas y mantenimiento. 
+Entorno de Desarrollo 
+• Apache 2.4.54: servidor web para pruebas locales. 
+• Visual Studio Code: entorno de desarrollo profesional para PHP. 
+• Draw.io: herramientas para diseño de diagramas y prototipos. 
+5. Estructura del Sistema 
+El proyecto sigue una arquitectura modular, con separación entre capas: 
+• Capa de presentación: interfaz web responsive basada en Bootstrap. 
+• Capa de negocio: controladores PHP encargados de las operaciones de alta, baja y modificación. 
+• Capa de datos: base de datos relacional MySQL con las tablas alumnos, libros, materias, cursos y 
+alumnoscursoslibros. 
+El sistema está diseñado para ser escalable y mantenible, permitiendo su posible integración futura con 
+otras plataformas educativas. 
+
+
+
+
+PARTE 1
+
+Este proyecto consiste en desarrollar una aplicación web tipo Fantasy League, 
+inspirada en Fantasy LaLiga, pero centrada en el mundo de la Fórmula 1. Los 
+usuarios podrán crear equipos de pilotos y escuderías, participar en ligas 
+privadas o públicas, y obtener puntos en función del rendimiento real de los 
+pilotos en los Grandes Premios. El sistema incluirá gestión de usuarios y ligas, 
+selección de pilotos con límite presupuestario, puntuaciones automáticas y 
+clasificaciones. 
+1.1 RECOPILACIÓN DE INFORMACIÓN 
+Fuentes principales: webs oficiales de F1, APIs deportivas como Ergast API o F1 
+Stats API, y ejemplos como F1 Fantasy o Biwenger.  
+Contexto: creciente interés por los juegos de simulación y gestión deportiva 
+online.  
+Referencias técnicas: documentación de React, Node.js, Spring Boot y MySQL. 
+1.2 OBJETIVOS, ALCANCE Y VIABILIDAD 
+Objetivo general: crear una aplicación web gamificada de gestión de equipos de 
+Fórmula 1. 
+Objetivos específicos: diseñar un sistema de usuarios y ligas, implementar un 
+motor de puntuación automática y crear una interfaz intuitiva y visual. 
+Alcance: versión inicial centrada en la temporada actual, sin apuestas ni 
+recompensas económicas. 
+Viabilidad técnica: Frontend con JS y Bootstrap, backend con PHP, base de 
+datos MySQL y despliegue en Docker. 
+1.2.1 ANÁLISIS DAFO 
+Fortalezas: idea atractiva, gran base de fans, escalable. 
+Debilidades: dependencia de APIs externas, mantenimiento intensivo. 
+Oportunidades: integración con redes sociales, creación de ligas locales o 
+corporativas. 
+Amenazas: derechos de datos oficiales, competencia de plataformas existentes. 
+Fantasy F1 Manager - Diseño del Proyecto | Oscar Ongil / David González 
+1.3 PRESUPUESTO Y FINANCIACIÓN 
+Dominio y hosting 
+80 €/año 
+API de datos deportivos (premium) 
+200 €/año 
+Diseño y desarrollo inicial 
+500 € 
+Marketing y promoción 
+150 € 
+Total estimado 
+930 € 
+Financiación: aportes personales y posible patrocinio de marcas locales o 
+tecnológicas. 
+1.4 ESTRUCTURA, FASES Y RECURSOS 
+Fases del desarrollo del proyecto: Análisis y diseño, desarrollo backend, 
+desarrollo frontend, pruebas y despliegue. 
+Recursos humanos: 2 desarrolladores y 1 diseñador UX/UI. 
+Recursos materiales: ordenadores, entorno de desarrollo, servidor de pruebas. 
+1.5 CONTROL DE CALIDAD 
+Criterios: cumplimiento de funcionalidades, pruebas unitarias, validación de 
+usabilidad y disponibilidad superior al 99%. 
+Estándares: ISO 25010, uso de ESLint y SonarLint. 
+1.6 DOCUMENTACIÓN DEL DISEÑO 
+Diagramas: casos de uso, clases, base de datos y mockups. 
+Ejemplo de tablas: 
+usuarios(id, nombre, email, contraseña) 
+pilotos(id, nombre, escuderia, precio) 
+equipos(id, id_usuario, presupuesto_restante) 
+ligas(id, nombre, tipo, id_admin) 
+resultados(id_carrera, id_piloto, puntos) 
+Fantasy F1 Manager - Diseño del Proyecto | Oscar Ongil / David González 
+2. DIAGRAMA DE CLASES 
+CONCLUSIÓN 
+El proyecto Fantasy F1 Manager busca trasladar la emoción del campeonato de 
+Fórmula 1 al entorno digital interactivo, combinando estrategia, estadísticas y 
+comunidad. Su desarrollo es viable y con gran potencial de participación. 
+
+PARTE 2
+
+La evaluación inicial se realiza antes del inicio de la Fase 2 (Desarrollo de Plataforma) y tiene como objetivo 
+validar que: 
+• Las reglas del sistema (T1.1–T1.4) están completamente definidas. 
+• El modelo de base de datos está correctamente diseñado. 
+• Las tecnologías seleccionadas (Frontend, Backend, API externa, MySQL, Docker) son viables. 
+• El cronograma de 26 semanas es realista. 
+• Los recursos humanos y materiales están disponibles. 
+Criterios de validación inicial 
+Elemento evaluado 
+Criterio 
+Reglas del juego 
+Estado esperado 
+Documento firmado y aprobado 
+Modelo de datos 
+Cerrado 
+Tablas normalizadas y revisadas 
+Validado 
+Arquitectura 
+Separación frontend/backend definida 
+API externa 
+Acceso funcional a Ergast u otra fuente 
+Aprobado 
+Confirmado 
+Cronograma 
+Sin solapamientos críticos 
+1.2. 
+Planificación de las revisiones 
+Se establecen tres tipos de revisión: 
+ Evaluación intermedia (por fases) 
+• Fin de Fase 1 → Validación de reglas y precios. 
+• Fin de Fase 2 → Validación de módulos (registro, mercado, UI). 
+• Fin de Fase 3 → Validación del motor de puntuación. 
+• Fin de Fase 4 → Validación global del sistema. 
+ Revisiones semanales 
+• Reunión semanal. 
+• Revisión de tareas en Trello. 
+• Control de desviaciones del cronograma 
+ Evaluación final 
+• Comparación del alcance real frente al planificado. 
+• Verificación de cumplimiento técnico y funcional. 
+• Validación económica (comparación presupuesto estimado vs real). 
+Validado 
+2. INDICADORES DE CALIDAD 
+2.1. 
+Casos de prueba y criterios pass/fail 
+Indicadores funcionales 
+Indicador 
+Métrica 
+Criterio PASS 
+Registro de usuario 
+Usuario creado correctamente 
+Login 
+Se guarda en BD 
+Acceso con credenciales válidas 
+Token generado 
+Fichaje 
+Compra válida 
+Cálculo de puntos 
+Presupuesto actualizado 
+Aplicación correcta del algoritmo 
+Coincide con resultado esperado 
+Clasificación 
+Orden correcto por puntuación 
+Indicadores técnicos 
+Ranking correcto 
+• Errores críticos en producción. 
+• < 5 errores menores detectados en pruebas finales. 
+• Cobertura de pruebas del algoritmo > 80%. 
+• Código validado mediante revisión cruzada. 
+Indicadores de rendimiento 
+• Tiempo de carga < 2 segundos. 
+• Respuesta API < 500 ms. 
+• Soporte mínimo de 100 usuarios simultáneos sin caída. 
+Indicadores de seguridad 
+• Contraseñas cifradas (hash + salt). 
+• Validación de inputs. 
+• Protección frente a SQL Injection. 
+• Uso de HTTPS en producción. 
+2.2. 
+Batería de procedimientos de pruebas 
+Pruebas unitarias 
+• Algoritmo de puntuación. 
+• Validación de presupuesto. 
+• Lógica de traspasos. 
+Pruebas de integración 
+• Conexión con API externa. 
+• Comunicación frontend-backend. 
+Pruebas funcionales 
+• Flujo completo: registro → fichaje → puntuación → clasificación. 
+Pruebas de carga 
+• Simulación de 10x usuarios esperados. 
+• Monitorización de consumo de recursos. 
+Pruebas de seguridad 
+• Intento de inyección SQL. 
+• Pruebas de sesión duplicada. 
+• Manipulación de datos desde frontend. 
+3. GESTIÓN DE INCIDENCIAS 
+3.1. 
+Formato del registro de incidencias 
+Se utilizará el siguiente formato: 
+ID 
+Fecha 
+Módulo 
+Tipo 
+Gravedad 
+3.2. 
+Sistematización y temporalización 
+Procedimiento: 
+1. Detección. 
+2. Registro inmediato. 
+3. Clasificación: 
+• Crítica → resolución en < 24h. 
+• Media → resolución en < 3 días. 
+• Baja → siguiente sprint. 
+4. Análisis de causa raíz. 
+5. Implementación. 
+6. Verificación. 
+7. Cierre y documentación. 
+4. GESTIÓN DE CAMBIOS 
+4.1. 
+Formato del registro de cambios 
+ID Cambio 
+Fecha 
+Tipo 
+Descripción 
+Descripción 
+Responsable 
+Estado 
+Solicitante 
+4.2. 
+Formato del análisis del impacto, acciones y decisiones 
+Para cada cambio se analizará: 
+Impacto en: 
+• Tiempo (¿retrasa el cronograma?) 
+• Coste (¿aumenta presupuesto?) 
+• Riesgo técnico 
+• Dependencias afectadas 
+Acciones posibles: 
+• Aprobación inmediata. 
+• Aplazamiento. 
+• Rechazo. 
+• Implementación parcial. 
+Decisión: 
+Se documentará: 
+• Responsable que aprueba. 
+• Fecha. 
+• Planificación de implementación. 
+Impacto 
+Decisión 
+• Actualización del cronograma. 
+5. PARTICIPACIÓN DE LOS USUARIOS EN LA EVALUACIÓN 
+Se incluirá: 
+• Encuesta de usabilidad tras pruebas beta. 
+• Valoración de experiencia de usuario (1–5). 
+• Recogida de sugerencias. 
+• Registro de mejoras solicitadas. 
+Formato 
+Usuario 
+Puntuación UX 
+Comentarios 
+Mejora propuesta 
+6. GARANTÍA DE CUMPLIMIENTO DEL PROYECTO 
+Para garantizar el cumplimiento del pliego de condiciones: 
+• Comparación periódica entre funcionalidades previstas y desarrolladas. 
+• Checklist de requisitos. 
+• Control de hitos. 
+• Auditoría interna antes del despliegue. 
+• Validación final contra el documento de di
