@@ -1,1 +1,0 @@
-# F1-Fantasy-Manager
