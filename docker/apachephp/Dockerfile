@@ -27,11 +27,14 @@ RUN pecl install xdebug \
 RUN a2enmod rewrite && a2enmod headers
 
 COPY apache2.conf /etc/apache2/apache2.conf
+COPY entrypoint.sh /entrypoint.sh
 
-RUN chown -R www-data:www-data /var/www/html \
+RUN chmod +x /entrypoint.sh \
+    && chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html \
     && mkdir -p /var/www/html/cache \
     && chown www-data:www-data /var/www/html/cache \
     && chmod 775 /var/www/html/cache
 
 EXPOSE 80
+ENTRYPOINT ["/entrypoint.sh"]

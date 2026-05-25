@@ -55,8 +55,9 @@ services:
       - "3307:3306"   # 3307 en host para no chocar con MySQL local
     volumes:
       - f1_dbdata:/var/lib/mysql
-      # Script SQL ejecutado automáticamente al crear el contenedor
+      # Scripts SQL ejecutados automáticamente al crear el contenedor (orden alfabético)
       - ./config/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ./config/migration_market.sql:/docker-entrypoint-initdb.d/02-migration_market.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE:      f1fantasy
