@@ -1,0 +1,109 @@
+# F1 Fantasy - Docker Compose
+# Stack: Apache + PHP 8.2 + MariaDB + phpMyAdmin
+# Uso: docker-compose up -d --build
+# Acceso app:        http://localhost:8080
+# Acceso phpMyAdmin: http://localhost:8081
+
+services:
+
+  # ─────────────────────────────────────────
+  # Contenedor 1: Apache + PHP 8.2 + XDebug
+  # ─────────────────────────────────────────
+  apachephp:
+    build:
+      context: ./docker/apachephp
+      dockerfile: Dockerfile
+    container_name: f1fantasy_web
+    ports:
+      - "8080:80"
+    volumes:
+      # Código fuente montado en tiempo real (no hace falta rebuild al editar)
+      - ./app:/var/www/html/app
+      - ./config:/var/www/html/config
+      - ./core:/var/www/html/core
+      - ./public:/var/www/html/public
+      # Configuración Apache personalizada
+      - ./docker/apachephp/apache2.conf:/etc/apache2/apache2.conf
+      # Configuración PHP personalizada
+      - ./docker/apachephp/php.ini:/usr/local/etc/php/conf.d/custom.ini
+      # XDebug
+      - ./docker/apachephp/20-xdebug.ini:/usr/local/etc/php/conf.d/20-xdebug.ini
+      # Caché de la API (persistente)
+      - f1_cache:/var/www/html/cache
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_USER=f1user
+      - DB_PASS=f1pass
+      - DB_NAME=f1fantasy
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    networks:
+      - f1net
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────
+  # Contenedor 2: MariaDB
+  # ─────────────────────────────────────────
+  mariadb:
+    image: mariadb:10.11
+    container_name: f1fantasy_db
+    ports:
+      - "3307:3306"   # 3307 en host para no chocar con MySQL local
+    volumes:
+      - f1_dbdata:/var/lib/mysql
+      # Script SQL ejecutado automáticamente al crear el contenedor
+      - ./config/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE:      f1fantasy
+      MYSQL_USER:          f1user
+      MYSQL_PASSWORD:      f1pass
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - f1net
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────
+  # Contenedor 3: phpMyAdmin
+  # ─────────────────────────────────────────
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: f1fantasy_pma
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST:     mariadb
+      PMA_PORT:     3306
+      PMA_USER:     root
+      PMA_PASSWORD: root
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    networks:
+      - f1net
+    restart: unless-stopped
+
+# ─────────────────────────────────────────
+# Volúmenes persistentes
+# ─────────────────────────────────────────
+volumes:
+  f1_dbdata:
+    driver: local
+  f1_cache:
+    driver: local
+
+# ─────────────────────────────────────────
+# Red interna
+# ─────────────────────────────────────────
+networks:
+  f1net:
+    driver: bridge
