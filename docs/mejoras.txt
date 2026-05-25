@@ -1,0 +1,6 @@
+Mejoras a futuro:
+
+-Implementacion de un sistema de puntuacion basado en rendimiento (DNFs restan, fast lap suma, pit stop mas rapido suma, etc)
+-Debido al alcance del proyecto, no hemos logrado controlar el exceso de presupuesto en caso de aumento por victorias
+    -Para corregirlo, una idea a implementar es obligar a cambiar el equipo si supera el presupuesto y/o obligar a cambiar el equipo por cada jornada
+-Implementar un registro de Logs
