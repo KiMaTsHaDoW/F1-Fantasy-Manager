@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "F1 Fantasy - XDebug (Docker)",
+            "type": "php",
+            "request": "launch",
+            "port": 9003,
+            "pathMappings": {
+                "/var/www/html/f1fantasy": "${workspaceFolder}/f1fantasy"
+            },
+            "log": false,
+            "ignore": [
+                "**/vendor/**/*.php"
+            ]
+        }
+    ]
+}
